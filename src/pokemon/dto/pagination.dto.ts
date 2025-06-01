@@ -5,9 +5,15 @@ const DEFAULT_PAGINATION_PARAMS = {
   limit: 20,
 };
 
+interface PaginationDto {
+  page: number;
+  limit: number;
+  message: string | null;
+}
+
 export const paginationDto = async (
   searchParams: PaginationProps["searchParams"]
-) => {
+): Promise<PaginationDto> => {
   const { page = "1", limit = "20" } = await searchParams;
 
   if (isNaN(parseInt(page)) || isNaN(parseInt(limit))) {
@@ -19,14 +25,13 @@ export const paginationDto = async (
   if (parseInt(page) < 1 || parseInt(limit) < 1) {
     return {
       ...DEFAULT_PAGINATION_PARAMS,
-      message:
-        "Pagination parameters must be greater than 0.",
+      message: "Pagination parameters must be greater than 0.",
     };
   }
 
   return {
     page: parseInt(page, 10),
     limit: parseInt(limit, 10),
-    message: null
+    message: null,
   };
 };
