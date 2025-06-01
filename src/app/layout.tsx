@@ -19,11 +19,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Pokemon Next App",
     description: "A simple Pokémon app built with Next.js",
-    url: "https://pokemon-next-app.vercel.app",
+    url: "https://pokemon-app-next-iota.vercel.app/",
     siteName: "Pokemon Next App",
     images: [
       {
-        url: "https://pokemon-next-app.vercel.app/pokemon-logo-og-image.webp",
+        url: "https://pokemon-app-next-iota.vercel.app/pokemon-logo-og-image.webp",
         width: 1200,
         height: 630,
         alt: "Pokemon Next App OG Image",

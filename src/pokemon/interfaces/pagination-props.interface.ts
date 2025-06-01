@@ -1,6 +1,6 @@
 export interface PaginationProps {
-  searchParams: {
+  searchParams: Promise<{
     page?: string;
     limit?: string;
-  };
+  }>;
 }
